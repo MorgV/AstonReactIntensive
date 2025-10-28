@@ -35,3 +35,8 @@
 .nav a:hover {
   color: var(--accent);
 }
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
