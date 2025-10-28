@@ -2,11 +2,11 @@ import type { FC } from "react";
 import { PostCard } from "../../entities/post/ui/PostCard";
 import styles from "./PostList.module.css";
 
-export interface Post {
+export type Post = {
   id: number;
   title: string;
   content: string;
-}
+};
 
 export const PostList: FC = () => {
   const posts: Post[] = [
