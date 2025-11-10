@@ -16,19 +16,35 @@
   color: var(--text);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 24px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
   max-width: 500px;
   width: 90%;
+  max-height: 90vh; /* адаптивная высота */
+  position: relative;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
 }
 
 .title {
-  margin: 0 0 10px;
+  margin: 0;
   font-size: 1.3rem;
 }
 
-.content {
-  margin-bottom: 20px;
+.bodyScrollable {
+  overflow-y: auto;
+  margin: 16px 0;
+}
+
+.footer {
+  flex-shrink: 0;
 }
 
 .close {

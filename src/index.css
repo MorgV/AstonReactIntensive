@@ -1,13 +1,29 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  /* list-style: none; */
 }
 
+li {
+  margin: 0;
+  padding: 0;
+}
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) inherit;
 }
 
 body {
@@ -20,16 +36,36 @@ body[data-theme="light"] {
   --accent: #6366f1;
   --accent-hover: #4f46e5;
   --border: #e5e7eb;
+  --scroll-thumb: rgba(99, 102, 241, 0.5);
   background: var(--bg);
   color: var(--text);
 }
 
 body[data-theme="dark"] {
   --bg: #1f2937;
-  --text: #f3f4f6;
   --accent: #8b5cf6;
   --accent-hover: #7c3aed;
   --border: #374151;
+  --scroll-thumb: rgba(139, 92, 246, 0.5);
   background: var(--bg);
   color: var(--text);
+}
+
+/* Chrome, Edge, Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: inherit; /* фон трека наследуется */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(
+    --scroll-thumb,
+    rgba(0, 0, 0, 0.5)
+  ); /* только бегунок */
+  border-radius: 3px;
+  border: 1px solid inherit;
 }

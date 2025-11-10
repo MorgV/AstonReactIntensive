@@ -21,62 +21,65 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      <Modal isOpen={isModalOpen} onClose={handleToggleModal} title="О проекте">
-        <p>
-          <strong>Проект:</strong> приложение для просмотра постов и
-          комментариев, основанное на публичном API <code>JSONPlaceholder</code>
-          .
-        </p>
+      <Modal isOpen={isModalOpen} onClose={handleToggleModal}>
+        <Modal.Header>О проекте</Modal.Header>
+        <Modal.Body>
+          <p>
+            <strong>Проект:</strong> приложение для просмотра постов и
+            комментариев, основанное на публичном API{" "}
+            <code>JSONPlaceholder</code>.
+          </p>
 
-        <p>
-          <strong>Основные технологии:</strong> React, TypeScript, Vite, RTK
-          Query, CSS Modules.
-        </p>
+          <p>
+            <strong>Основные технологии:</strong> React, TypeScript, Vite, RTK
+            Query, CSS Modules.
+          </p>
 
-        <p>
-          <strong>Функциональность:</strong> загрузка данных с{" "}
-          <a
-            href="https://jsonplaceholder.typicode.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            JSONPlaceholder
-          </a>
-          , отображение постов и комментариев, переключение темы и модальные
-          окна.
-        </p>
+          <p>
+            <strong>Функциональность:</strong> загрузка данных с{" "}
+            <a
+              href="https://jsonplaceholder.typicode.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              JSONPlaceholder
+            </a>
+            , отображение постов и комментариев, переключение темы и модальные
+            окна.
+          </p>
 
-        <p>
-          <strong>Архитектура проекта:</strong> реализована по принципам FSD
-          (Feature-Sliced Design):
-        </p>
+          <p>
+            <strong>Архитектура проекта:</strong> реализована по принципам FSD
+            (Feature-Sliced Design):
+          </p>
 
-        <ul>
-          <li>
-            <code>app/</code> — инициализация приложения (router, store, темы)
-          </li>
-          <li>
-            <code>pages/</code> — страницы роутов
-          </li>
-          <li>
-            <code>widgets/</code> — крупные интерфейсные блоки
-          </li>
-          <li>
-            <code>features/</code> — независимые пользовательские фичи
-          </li>
-          <li>
-            <code>entities/</code> — доменные сущности (user, post, todo)
-          </li>
-          <li>
-            <code>shared/</code> — общие компоненты, утилиты и стили
-          </li>
-        </ul>
+          <ul>
+            <li>
+              <code>app/</code> — инициализация приложения (router, store, темы)
+            </li>
+            <li>
+              <code>pages/</code> — страницы роутов
+            </li>
+            <li>
+              <code>widgets/</code> — крупные интерфейсные блоки
+            </li>
+            <li>
+              <code>features/</code> — независимые пользовательские фичи
+            </li>
+            <li>
+              <code>entities/</code> — доменные сущности (user, post, todo)
+            </li>
+            <li>
+              <code>shared/</code> — общие компоненты, утилиты и стили
+            </li>
+          </ul>
 
-        <p>
-          <strong>Организация работы:</strong> для каждой домашней работы
-          создаётся отдельный Merge Request (например, <code>homework-2</code>)
-          с описанием реализованных задач.
-        </p>
+          <p>
+            <strong>Организация работы:</strong> для каждой домашней работы
+            создаётся отдельный Merge Request.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>footer</Modal.Footer>
       </Modal>
     </>
   );

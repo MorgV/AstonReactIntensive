@@ -1,0 +1,49 @@
+/* PostLengthFilter.module.css */
+.wrapper {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  flex-wrap: wrap; /* Чтобы переносилось на узких экранах */
+}
+
+.label {
+  font-weight: 500;
+  min-width: 250px;
+  flex: 1; /* Растягивается, чтобы занимать доступное место */
+}
+
+.input {
+  height: 30px;
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: white;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 500px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem;
+  }
+
+  .label {
+    min-width: auto;
+    margin-bottom: 0.3rem;
+  }
+
+  .input {
+    width: 100%;
+  }
+}
