@@ -1,15 +1,16 @@
 .layout {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh; /* полностью на весь экран */
   background: var(--bg);
   color: var(--text);
   font-family: "Inter", system-ui, sans-serif;
-  overflow-x: hidden;
+  overflow: hidden; /* запрещаем скролл на body/layout */
 }
 
 .main {
-  flex: 1;
+  flex: 1; /* занимает оставшееся место между Header и Footer */
+  overflow-y: auto; /* только здесь скролл */
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
