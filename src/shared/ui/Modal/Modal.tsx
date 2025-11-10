@@ -21,10 +21,18 @@ type ModalComponent = FC<ModalProps> & {
 
 export const Modal: ModalComponent = ({ isOpen, onClose, children }) => {
   useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    if (!isOpen) return; // добавляем слушатель только если модалка открыта
+
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+
     window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, [onClose]);
+
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -34,7 +42,6 @@ export const Modal: ModalComponent = ({ isOpen, onClose, children }) => {
         <Button onClick={onClose} className={styles.close}>
           ×
         </Button>
-
         {children}
       </div>
     </div>,
