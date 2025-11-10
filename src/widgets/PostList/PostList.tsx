@@ -1,8 +1,10 @@
 import type { FC } from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import styles from "./PostList.module.css";
 import { withLoading } from "../../shared/lib/hoc/withLoading/withLoading";
 import { PostCard } from "../../entities/post/ui/PostCard";
+import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLength";
+import { PostLengthFilter } from "../../features/PostLengthFilter/ui/PostLengthFilter/PostLengthFilter";
 
 export type Comment = {
   id: number;
@@ -39,6 +41,7 @@ const EnhancedPostList = withLoading(PostListContent);
 export const PostList: FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [minLength, setMinLength] = useState(25);
 
   useEffect(() => {
     // Симуляция запроса с задержкой 2 секунды
@@ -75,6 +78,15 @@ export const PostList: FC = () => {
 
     return () => clearTimeout(timer);
   }, []);
+  const filteredPosts = useMemo(
+    () => filterByLength(posts, minLength),
+    [posts, minLength]
+  );
 
-  return <EnhancedPostList isLoading={isLoading} posts={posts} />;
+  return (
+    <>
+      <PostLengthFilter minLength={minLength} setMinLength={setMinLength} />
+      <EnhancedPostList isLoading={isLoading} posts={filteredPosts} />
+    </>
+  );
 };
