@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, memo } from "react";
 import styles from "./PostList.module.css";
 import { withLoading } from "../../shared/lib/hoc/withLoading/withLoading";
 import { PostCard } from "../../entities/post/ui/PostCard";
@@ -22,7 +22,7 @@ type PostListContentProps = {
   posts: Post[];
 };
 
-const PostListContent: FC<PostListContentProps> = ({ posts }) => (
+const PostListContent: FC<PostListContentProps> = memo(({ posts }) => (
   <div className={styles.list}>
     {posts.map((post) => (
       <PostCard
@@ -33,7 +33,7 @@ const PostListContent: FC<PostListContentProps> = ({ posts }) => (
       />
     ))}
   </div>
-);
+));
 
 // HOC для отображения загрузки
 const EnhancedPostList = withLoading(PostListContent);
