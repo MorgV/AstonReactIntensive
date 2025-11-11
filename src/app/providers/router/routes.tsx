@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import { PostsPage } from "../../../pages/PostsPage/ui/PostsPage";
-import { PostDetailsPage } from "../../../pages/PostDetailsPage/ui/PostDetailsPage";
-import { UserPostsPage } from "../../../pages/UserPostsPage/ui/UserPostsPage";
-import { UserAlbumsPage } from "../../../pages/UserAlbumsPage/ui/UserAlbumsPage";
-import { AlbumPhotosPage } from "../../../pages/AlbumPhotosPage/ui/AlbumPhotosPage";
-import { UserTodosPage } from "../../../pages/UserTodosPage/ui/UserTodosPage";
+import { PostsPage } from "../../../pages/PostsPage/PostsPage";
+import { PostDetailsPage } from "../../../pages/PostDetailsPage/PostDetailsPage";
+import { UserPostsPage } from "../../../pages/UserPostsPage/UserPostsPage";
+import { UserAlbumsPage } from "../../../pages/UserAlbumsPage/UserAlbumsPage";
+import { AlbumPhotosPage } from "../../../pages/AlbumPhotosPage/AlbumPhotosPage";
+import { UserTodosPage } from "../../../pages/UserTodosPage/UserTodosPage";
 import { App } from "../../App";
 
 export const router = createBrowserRouter([

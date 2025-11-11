@@ -1,0 +1,18 @@
+/* src/widgets/UserTabs/ui/UserTabs.module.css */
+
+.nav {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
