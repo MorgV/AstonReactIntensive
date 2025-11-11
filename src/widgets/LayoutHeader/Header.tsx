@@ -3,6 +3,7 @@ import styles from "./Header.module.css";
 import { Button } from "../../shared/ui/Button/Button";
 import { ThemeSwitcher } from "../../features/ThemeSwitcher/ui/ThemeSwitcher";
 import { Modal } from "../../shared/ui/Modal/Modal";
+import { UserTabs } from "../UserTabs/ui/UserTabs";
 
 export const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,6 +15,7 @@ export const Header: React.FC = () => {
       <header className={styles.header}>
         <div className={styles.container}>
           <h1 className={styles.logo}>MyBlog</h1>
+          <UserTabs />
           <div className={styles.actions}>
             <Button onClick={handleToggleModal}>О проекте</Button>
             <ThemeSwitcher />
