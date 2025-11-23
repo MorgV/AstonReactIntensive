@@ -1,5 +1,7 @@
-import React from "react";
+import { useParams } from "react-router-dom";
+import { PostList } from "../../widgets/PostList/PostList";
 
 export const UserPostsPage = () => {
-  return <div>UserPostsPage</div>;
+  const { id } = useParams();
+  return <PostList userId={id} />;
 };

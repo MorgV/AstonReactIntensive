@@ -1,7 +1,5 @@
-// src/features/PostLengthFilter/lib/filterByLength.ts
+import type { IPost } from "../../../entities/post/model/IPost";
 
-import type { Post } from "../../../shared/api/api";
-
-export function filterByLength(posts: Post[], minLength: number): Post[] {
+export function filterByLength(posts: IPost[], minLength: number): IPost[] {
   return posts.filter((post) => post.title.length >= minLength);
 }

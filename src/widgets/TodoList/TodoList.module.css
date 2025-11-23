@@ -1,0 +1,30 @@
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  cursor: default;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.completed {
+  color: var(--accent);
+  text-decoration: line-through;
+}
+
+.pending {
+  color: var(--text);
+}
