@@ -4,7 +4,7 @@ import {
   createEntityAdapter,
   type PayloadAction,
 } from "@reduxjs/toolkit";
-import type { IPost } from "../IPost";
+import type { IPost } from "../types";
 import { postApi } from "../../api/postApi";
 
 const postsAdapter = createEntityAdapter<IPost>({

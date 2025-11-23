@@ -3,8 +3,8 @@ import { type FC } from "react";
 import { withLoading } from "../../shared/lib/hoc/withLoading/withLoading";
 import { todosApi } from "../../entities/todo/api/todosApi";
 import { useParams } from "react-router-dom";
-import type { ITodo } from "../../entities/todo/model/ITodo";
 import { TodoList } from "../../widgets/TodoList/TodoList";
+import type { ITodo } from "../../entities/todo/model/types";
 
 const TodoListContent: FC<{ todos: ITodo[]; isLoading: boolean }> = ({
   todos,

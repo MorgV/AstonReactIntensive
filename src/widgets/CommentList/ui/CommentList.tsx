@@ -13,7 +13,7 @@ type CommentListProps = {
 export const CommentList: FC<CommentListProps> = memo(({ comments }) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
-  const toggle = () => {
+  const toggle: React.MouseEventHandler<HTMLButtonElement> = () => {
     setIsCollapsed((prev) => !prev);
   };
 

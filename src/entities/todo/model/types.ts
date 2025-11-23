@@ -1,5 +1,6 @@
-export interface IAlbum {
+export type ITodo = {
   userId: number;
   id: number;
   title: string;
-}
+  completed: boolean;
+};

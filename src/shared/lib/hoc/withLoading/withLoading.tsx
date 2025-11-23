@@ -1,4 +1,4 @@
-import { type ComponentType } from "react";
+import { type ComponentType, type JSX } from "react";
 import styles from "./withLoading.module.css";
 
 interface WithLoadingProps {
@@ -8,7 +8,7 @@ interface WithLoadingProps {
 export function withLoading<PropsType extends object>(
   WrappedComponent: ComponentType<PropsType>
 ) {
-  return (props: PropsType & WithLoadingProps) => {
+  return (props: PropsType & WithLoadingProps): JSX.Element => {
     const { isLoading, ...restProps } = props;
 
     if (isLoading) {

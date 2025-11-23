@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/providers/store/hooks/redux";
 import { postsSelectors } from "../../entities/post/model/slice/postSlice";
 import { postApi } from "../../entities/post/api/postApi";
-import type { IPost } from "../../entities/post/model/IPost";
+import type { IPost } from "../../entities/post/model/types";
 import styles from "./PostDetailsPage.module.css"; // новый файл CSS
 
 export const PostDetailsPage: FC = () => {

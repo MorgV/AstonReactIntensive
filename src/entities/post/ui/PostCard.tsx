@@ -18,7 +18,7 @@ export const PostCard: FC<PostCardProps> = memo(
   ({ id, title, content, comments }) => {
     const navigate = useNavigate();
 
-    const handleClick = () => {
+    const handleClick: React.MouseEventHandler<HTMLElement> = () => {
       navigate(`/posts/${id}`);
     };
 

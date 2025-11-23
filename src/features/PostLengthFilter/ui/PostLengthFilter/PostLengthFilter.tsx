@@ -17,7 +17,9 @@ export const PostLengthFilter: FC<PostLengthFilterProps> = memo(
           ref={inputRef}
           type="number"
           value={minLength}
-          onChange={(e) => setMinLength(Number(e.target.value))}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setMinLength(Number(e.target.value))
+          }
           min={0}
           className={styles.input}
         />
