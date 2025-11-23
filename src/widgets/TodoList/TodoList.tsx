@@ -1,6 +1,7 @@
 import { type FC, memo } from "react";
-import type { ITodo } from "../../entities/todo/model/ITodo";
+import { MemoItemList } from "../../shared/ui/ItemList/ItemList";
 import styles from "./TodoList.module.css";
+import type { ITodo } from "../../entities/todo/model/types";
 
 interface TodoListProps {
   todos: ITodo[];
@@ -11,17 +12,19 @@ export const TodoList: FC<TodoListProps> = memo(({ todos, isLoading }) => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <ul className={styles.list}>
-      {todos.map((todo) => (
-        <li
-          key={todo.id}
+    <MemoItemList
+      items={todos}
+      getKey={(todo) => todo.id}
+      className={styles.list}
+      renderItem={(todo) => (
+        <div
           className={`${styles.item} ${
             todo.completed ? styles.completed : styles.pending
           }`}
         >
           {todo.title} {todo.completed ? "(Done)" : "(Pending)"}
-        </li>
-      ))}
-    </ul>
+        </div>
+      )}
+    />
   );
 });

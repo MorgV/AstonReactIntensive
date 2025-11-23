@@ -1,6 +1,6 @@
 // src/entities/albums/api/albumPhotosApi.ts
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { IPhoto } from "../model/IPhoto";
+import type { IPhoto } from "../model/types";
 
 export const albumPhotosApi = createApi({
   reducerPath: "albumPhotosApi",

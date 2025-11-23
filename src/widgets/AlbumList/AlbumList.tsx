@@ -1,8 +1,8 @@
-// src/widgets/AlbumList/AlbumList.tsx
 import { type FC, memo } from "react";
 import { useNavigate } from "react-router-dom";
-import type { IAlbum } from "../../entities/albums/model/IAlbums";
+import { MemoItemList } from "../../shared/ui/ItemList/ItemList";
 import styles from "./AlbumList.module.css";
+import type { IAlbum } from "../../entities/albums/model/types";
 
 interface AlbumListProps {
   albums: IAlbum[];
@@ -14,21 +14,19 @@ export const AlbumList: FC<AlbumListProps> = memo(({ albums, isLoading }) => {
 
   if (isLoading) return <div>Loading...</div>;
 
-  const handleClick = (albumId: number) => {
-    navigate(`/albums/${albumId}/photos`);
-  };
-
   return (
-    <ul className={styles.list}>
-      {albums.map((album) => (
+    <MemoItemList
+      items={albums}
+      getKey={(album) => album.id}
+      className={styles.list}
+      renderItem={(album) => (
         <li
-          key={album.id}
           className={styles.item}
-          onClick={() => handleClick(album.id)}
+          onClick={() => navigate(`/albums/${album.id}/photos`)}
         >
           {album.title}
         </li>
-      ))}
-    </ul>
+      )}
+    />
   );
 });

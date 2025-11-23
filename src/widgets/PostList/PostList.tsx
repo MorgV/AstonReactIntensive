@@ -9,7 +9,8 @@ import { PostLengthFilter } from "../../features/PostLengthFilter/ui/PostLengthF
 import { useAppSelector } from "../../app/providers/store/hooks/redux";
 import { postsSelectors } from "../../entities/post/model/slice/postSlice";
 import { postApi } from "../../entities/post/api/postApi";
-import type { IPost } from "../../entities/post/model/IPost";
+import type { IPost } from "../../entities/post/model/types";
+import { MemoItemList } from "../../shared/ui/ItemList/ItemList";
 
 interface PostListProps {
   userId?: number | string;
@@ -27,8 +28,11 @@ const PostListContent: FC<PostListContentProps> = memo(
     if (isLoading) return <div>Loading...</div>;
 
     return (
-      <div className={styles.list}>
-        {posts.map((post) => (
+      <MemoItemList<IPost>
+        items={posts}
+        getKey={(post) => post.id}
+        className={styles.list}
+        renderItem={(post) => (
           <PostCard
             key={post.id}
             id={post.id}
@@ -36,8 +40,8 @@ const PostListContent: FC<PostListContentProps> = memo(
             content={post.body}
             comments={[]}
           />
-        ))}
-      </div>
+        )}
+      />
     );
   }
 );

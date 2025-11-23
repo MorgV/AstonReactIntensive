@@ -5,8 +5,9 @@ import { albumsApi } from "../../entities/albums/api/albumsApi";
 import { useParams } from "react-router-dom";
 import { skipToken } from "@reduxjs/toolkit/query";
 import { AlbumList } from "../../widgets/AlbumList/AlbumList";
+import type { IAlbum } from "../../entities/albums/model/types";
 
-const AlbumListContent: FC<{ albums: any[]; isLoading: boolean }> = ({
+const AlbumListContent: FC<{ albums: IAlbum[]; isLoading: boolean }> = ({
   albums,
   isLoading,
 }) => {

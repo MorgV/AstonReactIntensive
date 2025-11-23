@@ -1,6 +1,6 @@
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
-import type { IAlbum } from "../IAlbums";
 import { albumsApi } from "../../api/albumsApi";
+import type { IAlbum } from "../types";
 
 const albumsAdapter = createEntityAdapter<IAlbum>({
   selectId: (album: IAlbum): number => album.id,

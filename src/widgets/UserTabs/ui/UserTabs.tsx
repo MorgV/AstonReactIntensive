@@ -2,10 +2,9 @@
 
 import { NavLink } from "react-router-dom";
 import styles from "./UserTabs.module.css";
+import type { FC } from "react";
 
-export const UserTabs = () => {
-  //const { id } = useUserState();
-
+export const UserTabs: FC = () => {
   const tabs = [
     { to: `/users/${1}/posts`, label: "Посты" },
     { to: `/users/${1}/albums`, label: "Альбомы" },
